@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html id="html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./jquery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        data = [
+            // {
+            //     url:"dlxy.ccswust.edu.cn",
+            //     data:'/'
+            // },
+            {
+                url:`www.maosi.vip`,
+                data:`/app/index.html`
+            }
+        ]
+
+        for (let i = 0; i < data.length; i++) {
+            $.ajax({
+                url: "http://localhost:3000",
+                data: data[i],
+                type: "get",
+                success: function (res) {
+                    console.log(res)
+                    $("#html").append(res.toString());
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>
